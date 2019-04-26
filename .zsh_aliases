@@ -1,0 +1,19 @@
+
+
+# EDIT THIS FILE
+#alias zshaliases= vim ~/.zsh_aliases
+# moved to .zshrc
+
+
+# Reload .zshrc
+alias rezsh="source $HOME/.zshrc"
+
+
+# PYTHON
+alias python="python3"
+
+# VIRTUALENV
+alias vactivate="source ./venv/bin/activate"
+
+# GIT DOTFILE STORAGE
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
