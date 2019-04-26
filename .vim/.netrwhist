@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/etc/zsh'
+let g:netrw_dirhist_2='/home/torjusba/Programming/TDT4102/template/.vscode'
+let g:netrw_dirhist_3='/home/torjusba/Programming/opencv_testing/testing_qr_joining_algorithms/src'
+let g:netrw_dirhist_4='/home/torjusba/Programming/opencv_testing/testing_qr_joining_algorithms'
+let g:netrw_dirhist_5='/home/torjusba/Downloads/veonim/src'
+let g:netrw_dirhist_6='/home/torjusba/.vim'
