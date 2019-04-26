@@ -1,5 +1,7 @@
 .linkignore
 .links
+.git
+.gitignore
 remove_links.sh
 create_links.sh
 *.swp
