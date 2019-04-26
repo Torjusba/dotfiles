@@ -1,0 +1,5 @@
+.linkignore
+.links
+remove_links.sh
+create_links.sh
+*.swp
