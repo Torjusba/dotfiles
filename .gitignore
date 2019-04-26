@@ -1,2 +1,3 @@
 .links
 *.swp
+.vim/view
