@@ -2,6 +2,7 @@
 .links
 .git
 .gitignore
+README.md
 remove_links.sh
 create_links.sh
 *.swp
