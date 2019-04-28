@@ -1,3 +1,12 @@
+function log_error {
+	echo -e "\033[0;31m"$1"\033[0;m"
+
+}
+
+function try_source {
+	{ [ -f $1 ] && source $1 } || log_error "File '$1' not found."
+}
+
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/torjusba/.oh-my-zsh"
@@ -59,27 +68,17 @@ export PATH=$PATH:/snap/bin
 export PATH=$PATH:$HOME/bin
 
 # Aliases
-alias sudo='sudo ' #Fixes sudo issues in aliases
-alias gimme='apt install'
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshaliases="vim ~/.zsh_aliases"
-alias vimconfig="vim ~/.vimrc"
 
 # Move aliases to separate file
-if [ -f ~/.zsh_aliases ]; then
-	. ~/.zsh_aliases
-fi
-
+try_source "$HOME/.zsh_aliases"
 
 # Z navigation
-. ~/.oh-my-zsh/z/z.sh
+try_source "$HOME/.oh-my-zsh/z/z.sh"
 
+# Source necesssary ROS files
+try_source "$HOME/.zsh-ros-setup"
 
-
-#if [ -f ~.zsh-ros-setup ]; then
-. ~/.zsh-ros-setup
-#fi
 
 
 

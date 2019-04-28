@@ -5,6 +5,12 @@
 # moved to .zshrc
 
 
+alias sudo='sudo ' #Fixes sudo issues in aliases
+alias gimme='apt install'
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimconfig="vim ~/.vimrc"
+
 # Reload .zshrc
 alias rezsh="source $HOME/.zshrc"
 
@@ -16,4 +22,5 @@ alias python="python3"
 alias vactivate="source ./venv/bin/activate"
 
 # GIT DOTFILE STORAGE
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# OLD METHOD
+#alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
