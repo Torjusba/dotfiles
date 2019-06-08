@@ -65,7 +65,8 @@ export EDITOR='vim'
 # Add snaps to path
 export PATH=$PATH:/snap/bin
 
-export PATH=$PATH:$HOME/bin
+#Add custom scripts to path
+export PATH=$PATH:$HOME/scripts
 
 # Aliases
 alias zshaliases="vim ~/.zsh_aliases"

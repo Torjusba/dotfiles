@@ -1,0 +1,8 @@
+#! /bin/zsh
+
+export ROS_HOSTNAME=$(ip route get 1 | awk '{print $7;exit}')
+export ROS_IP=$ROS_HOSTNAME
+[ $1 ] && export ROS_MASTER_URI=$1
+
+env | grep ROS
+echo ""
