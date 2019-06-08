@@ -60,6 +60,7 @@ try
 
 	" fzf 
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+	Plug 'junegunn/fzf.vim'
 
 	" Autocompletion
 	"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
@@ -117,6 +118,7 @@ let $FZF_DEFAULT_COMMAND='fd --type f'
 				\ 'header':  ['fg', 'Comment'] }
 
 
+	nnoremap ,g :Rg<enter>
 	nnoremap ,f :FZF<enter>
 	" ### END FZF ###
 catch
