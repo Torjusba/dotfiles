@@ -1,3 +1,0 @@
-alias sdevel="source ./devel/setup.zsh"
-
-source /opt/ros/kinetic/setup.zsh

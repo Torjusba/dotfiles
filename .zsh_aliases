@@ -6,6 +6,7 @@
 
 
 alias sudo='sudo ' #Fixes sudo issues in aliases
+
 alias gimme='apt install'
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
@@ -21,6 +22,11 @@ alias python="python3"
 # VIRTUALENV
 alias vactivate="source ./venv/bin/activate"
 
-# GIT DOTFILE STORAGE
-# OLD METHOD
-#alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# ROS
+alias ros_network_setup="source set_ros_network_env_variables"
+alias sdevel="source $HOME/ROS/catkin_ws/devel/setup.zsh"
+source /opt/ros/kinetic/setup.zsh
+
+
+# CLION
+alias clion="sh $HOME/Documents/clion-2018.3.3/bin/clion.sh"
