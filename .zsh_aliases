@@ -24,7 +24,7 @@ alias vactivate="source ./venv/bin/activate"
 
 # ROS
 alias ros_network_setup="source set_ros_network_env_variables"
-alias sdevel="source $HOME/ROS/catkin_ws/devel/setup.zsh"
+alias sdevel="source ./devel/setup.zsh"
 source /opt/ros/kinetic/setup.zsh
 
 
