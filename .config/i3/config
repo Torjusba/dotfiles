@@ -194,3 +194,7 @@ smart_borders no_gaps
 gaps inner 10
 gaps outer -5 
 
+
+
+# Transparency
+exec xcompmgr -c -n
