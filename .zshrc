@@ -77,10 +77,6 @@ try_source "$HOME/.zsh_aliases"
 # Z navigation
 try_source "$HOME/.oh-my-zsh/z/z.sh"
 
-# Source necesssary ROS files
-try_source "$HOME/.zsh-ros-setup"
-
-
 
 
 bindkey -v # Vim keybindings
