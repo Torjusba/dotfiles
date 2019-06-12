@@ -49,7 +49,7 @@ autocmd BufWinEnter *.* silent loadview
 try
 	" ### COLORS ### 
 	"colorscheme strawberry 
-	colorscheme rupza 
+	"colorscheme rupza 
 	" ### END COLORS ### 
 catch
 endtry
