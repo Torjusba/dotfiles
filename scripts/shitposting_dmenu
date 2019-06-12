@@ -1,3 +1,3 @@
 #! /bin/bash
 
-cat $HOME/bin/pastas/$(ls $HOME/bin/pastas | dmenu -i -l 20 ) | xclip -selection clipboard
+cat $HOME/scripts/pastas/$(ls $HOME/scripts/pastas | dmenu -i -l 20 ) | xclip -selection clipboard
