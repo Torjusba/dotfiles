@@ -8,3 +8,5 @@ If a file already exists, it will be overwritten. If a subdirectory already exit
 
 The script will also keep track of created symlinks in `.links` for easier cleanup. `remove_links.sh` simply unlinks all the entries in `.links`.
 
+##
+> Screen brightness uses [ybacklight](https://github.com/femnad/ybacklight) because xbacklight didn't work on my machine
