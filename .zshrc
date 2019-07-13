@@ -83,3 +83,4 @@ bindkey -v # Vim keybindings
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /opt/ros/melodic/setup.zsh
