@@ -46,6 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -74,8 +75,6 @@ alias zshaliases="vim ~/.zsh_aliases"
 # Move aliases to separate file
 try_source "$HOME/.zsh_aliases"
 
-# Z navigation
-try_source "$HOME/.oh-my-zsh/z/z.sh"
 
 
 
