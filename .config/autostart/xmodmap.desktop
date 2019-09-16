@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/torjusba/scripts/modmap
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name=xmodmap
+Comment=Set keyboard to no/gb layout
