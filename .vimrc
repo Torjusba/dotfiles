@@ -62,6 +62,9 @@ try
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'
 
+	" Tmux aware navigation
+	Plug 'christoomey/vim-tmux-navigator'
+
 	" Autocompletion
 	"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
