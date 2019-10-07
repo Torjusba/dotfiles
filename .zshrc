@@ -66,7 +66,7 @@ export EDITOR='vim'
 # Add snaps to path
 export PATH=$PATH:/snap/bin
 
-#Add custom scripts to path
+#add custom scripts to path
 export PATH=$PATH:$HOME/scripts
 
 # Aliases
@@ -79,6 +79,17 @@ try_source "$HOME/.zsh_aliases"
 
 
 bindkey -v # Vim keybindings
+
+# Open command in vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+
+# Navigate menus with vim bindings
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
