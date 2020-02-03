@@ -186,8 +186,9 @@ bindsym $mod+Shift+b exec /usr/bin/gnome-session-quit --reboot
 bindsym $mod+Shift+p exec /usr/bin/gnome-session-quit --power-off
 
 # lock the screen
-bindsym $mod+Escape exec i3lock-fancy -gp -- scrot -z
+bindsym $mod+Escape exec $HOME/scripts/fancy-lock
 
+ 
 # put the system to sleep
 bindsym $mod+Shift+s exec systemctl suspend
 
@@ -338,3 +339,6 @@ exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
 
 # Set keyboard layout
 exec --no-startup-id ~/scripts/modmap
+
+# autolock 
+exec --no-startup-id xautolock -time 15 -locker '~/scripts/fancy-lock'
