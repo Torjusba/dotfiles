@@ -29,12 +29,11 @@ set smarttab
 set nrformats-=octal 
 
 
-" Doesn't work, as my VIM is not built with clipboard access
+" Needs vim to be built with clipboard access
 set clipboard=unnamedplus
 
 
 " Makes tags for tag jumping
-" TODO: Auto run this? Maybe not
 command! MakeTags !ctags -R .
 
 " Auto load views
@@ -70,7 +69,7 @@ function! ToggleVExplorer()
 	endif
 endfunction
 
-map <silent> <C-O> :call ToggleVExplorer()<CR>
+map <silent> <C-F> :call ToggleVExplorer()<CR>
 
 
 
@@ -121,10 +120,6 @@ if !has('nvim') && &ttimeoutlen == -1
 endif
 
 set incsearch
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-	nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
 
 set laststatus=2
 set ruler
@@ -183,6 +178,6 @@ endif
 
 inoremap <C-U> <C-G>u<C-U>
 
+" ### END VIM-SENSIBLE ### 
 " Stop annoying auto commenting
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
-" ### END VIM-SENSIBLE ### 
