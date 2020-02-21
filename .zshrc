@@ -46,7 +46,8 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-z
+  z
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -93,7 +94,8 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /opt/ros/melodic/setup.zsh
+[ -f /opt/ros/melodic/setup.zsh ] && source /opt/ros/melodic/setup.zsh
+[ -f ~/Ascend/catkin_ws/devel/setup.zsh ] && source ~/Ascend/catkin_ws/devel/setup.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
