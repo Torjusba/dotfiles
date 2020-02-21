@@ -14,7 +14,7 @@ set $i3xrocks_config $HOME/.config/regolith/i3xrocks/config
 set $compton_config /etc/regolith/compton/config
 
 # path to terminal. Override this to specify a custom terminal.
-set $terminal_path /usr/bin/st
+set $terminal_path /usr/local/bin/st
 
 # Color values are defined in ~/.Xresources-regolith
 # These are the labels which define each i3 workspace.
@@ -337,9 +337,6 @@ exec --no-startup-id /usr/bin/unclutter -b
 
 # Refresh wallpaper on screen resolution change
 exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
-
-# Set keyboard layout
-exec --no-startup-id ~/scripts/modmap
 
 # autolock 
 #exec --no-startup-id xautolock -time 15 -locker '~/scripts/fancy-lock'
