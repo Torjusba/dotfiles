@@ -1,5 +1,6 @@
 .links
 *.swp
-.vim/view
-.vim/plugged
+.vim
+.config/nvim/autoload
+.config/nvim/plugged
 .oh-my-zsh

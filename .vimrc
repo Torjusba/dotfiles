@@ -33,87 +33,27 @@ set nrformats-=octal
 set clipboard=unnamedplus
 
 
-" Makes tags for tag jumping
-command! MakeTags !ctags -R .
-
 " Auto load views
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-" netrw
-let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 20
-
-" Toggle netrw tree
-function! ToggleVExplorer()
-	if exists("t:expl_buf_num")
-		let expl_win_num = bufwinnr(t:expl_buf_num)
-		let cur_win_num = winnr()
-
-		if expl_win_num != -1
-			while expl_win_num != cur_win_num
-				exec "wincmd w"
-				let cur_win_num = winnr()
-			endwhile
-
-			close
-		endif
-
-		unlet t:expl_buf_num
-	else
-		Vexplore
-		let t:expl_buf_num = bufnr("%")
-	endif
-endfunction
-
-map <silent> <C-F> :call ToggleVExplorer()<CR>
+" Pane navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 
-
-
-" ### END GENERAL ###
-
-try
-	" ### COLORS ### 
-	"colorscheme strawberry 
-	"colorscheme rupza 
-	" ### END COLORS ### 
-catch
-endtry
-
-try
-	" ### VIM PLUG ###
-	call plug#begin('~/.vim/plugged')
-
-	" Tmux aware navigation
-	Plug 'christoomey/vim-tmux-navigator'
-
-	" Autocompletion
-	Plug 'ycm-core/YouCompleteMe'
-
-
-	call plug#end()
-
-
-	" ### END VIM PLUG ###
-catch
-endtry
 
 " ### VIM-SENSIBLE ### 
 if has('autocmd')
 	filetype plugin indent on
 endif
-" TODO: Duplicate?
 if has('syntax') && !exists('g:syntax_on')
 	syntax enable
 endif
 
 " Use :help 'option' to see the documentation for the given option.
-
-
 if !has('nvim') && &ttimeoutlen == -1
 	set ttimeout
 	set ttimeoutlen=100
@@ -171,13 +111,7 @@ if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
 	set t_Co=16
 endif
 
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-	runtime! macros/matchit.vim
-endif
-
-inoremap <C-U> <C-G>u<C-U>
-
 " ### END VIM-SENSIBLE ### 
+
 " Stop annoying auto commenting
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o

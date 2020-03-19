@@ -1,6 +1,5 @@
 function log_error {
 	echo -e "\033[0;31m"$1"\033[0;m"
-
 }
 
 function try_source {
@@ -8,8 +7,14 @@ function try_source {
 }
 
 
+function try_source_silent {
+	{ [ -f $1 ] && source $1 }
+}
+
+
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/torjusba/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+
 
 
 # Use 'clean' for remotes and servers
@@ -45,37 +50,16 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  z
-  zsh-syntax-highlighting
+git
+z
 )
 
-source $ZSH/oh-my-zsh.sh
+try_source $ZSH/oh-my-zsh.sh
 
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-export EDITOR='vim'
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-
-# Add snaps to path
-export PATH=$PATH:/snap/bin
-
-#add custom scripts to path
-export PATH=$PATH:$HOME/scripts
-
-# Aliases
-alias zshaliases="vim ~/.zsh_aliases"
-
-# Move aliases to separate file
-try_source "$HOME/.zsh_aliases"
-
 
 
 
@@ -93,21 +77,6 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f /opt/ros/melodic/setup.zsh ] && source /opt/ros/melodic/setup.zsh
-[ -f ~/Ascend/catkin_ws/devel/setup.zsh ] && source ~/Ascend/catkin_ws/devel/setup.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/torjusba/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/torjusba/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/torjusba/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/torjusba/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+try_source_silent $HOME/.fzf.zsh
+try_source_silent /opt/ros/melodic/setup.zsh
+try_source_silent $HOME~/Ascend/catkin_ws/devel/setup.zsh

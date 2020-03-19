@@ -2,8 +2,9 @@
 .links
 .git
 .gitignore
+.bootstrap
+bootstrap.sh
 README.md
 remove_links.sh
 create_links.sh
-gb
 *.swp
