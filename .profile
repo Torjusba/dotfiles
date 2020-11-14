@@ -17,7 +17,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Default programs
-export EDITOR=nvim
+export EDITOR=vim
 export BROWSER=firefox
 export TERMINAL=st
 export READER=zathura

@@ -27,10 +27,10 @@ configure_keyboard()
 
 execute_bootstrap()
 {
-	configure_keyboard
-	install_programs
+	#configure_keyboard
+	#install_programs
 	#chsh -s $(which zsh)
-	#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 }
 
 read -p "This script WILL overwrite local files. Continue (y/n)?" do_proceed
