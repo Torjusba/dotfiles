@@ -33,9 +33,10 @@ execute_bootstrap()
 
 	# install oh-my-zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-	sh -c "git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z"
+	zsh -c "git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z"
 }
 
+echo "You are on branch $(git branch --show-current)\n"
 read -p "This script WILL overwrite local files. Continue (y/n)?" do_proceed
 
 case $do_proceed in 
