@@ -51,8 +51,10 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 git
-z
+zsh-z
 )
+# Pretty completion for z plugin
+zstyle ':completion:*' menu select
 
 try_source $ZSH/oh-my-zsh.sh
 
