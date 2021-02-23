@@ -20,7 +20,6 @@ fi
 export EDITOR=vim
 export BROWSER=firefox
 export TERMINAL=st
-export READER=zathura
 
 # Add snap bin to path if it exists
 if [ -d "/snap/bin" ]; then

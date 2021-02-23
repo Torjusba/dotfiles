@@ -27,9 +27,11 @@ configure_keyboard()
 
 execute_bootstrap()
 {
-	#configure_keyboard
-	#install_programs
-	#chsh -s $(which zsh)
+	configure_keyboard
+	install_programs
+	chsh -s $(which zsh)
+
+	# install oh-my-zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 }
 
