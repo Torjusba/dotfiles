@@ -31,7 +31,10 @@ execute_bootstrap()
 	install_programs
 	chsh -s $(which zsh)
 
-	# install oh-my-zsh
+	# Fix dual boot time offset
+	timedatectl set-local-rtc 1 --adjust-system-clock
+
+ 	# install oh-my-zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 	zsh -c "git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z"
 }
