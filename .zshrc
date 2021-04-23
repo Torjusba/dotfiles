@@ -67,6 +67,9 @@ try_source $ZSH/oh-my-zsh.sh
 
 bindkey -v # Vim keybindings
 
+# Reverse history search
+bindkey '^r' history-incremental-pattern-search-backward
+
 # Open command in vim
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
