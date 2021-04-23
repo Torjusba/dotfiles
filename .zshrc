@@ -80,5 +80,5 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 
 try_source_silent $HOME/.fzf.zsh
-try_source_silent /opt/ros/melodic/setup.zsh
+try_source_silent /opt/ros/noetic/setup.zsh
 try_source_silent $HOME~/Ascend/catkin_ws/devel/setup.zsh
