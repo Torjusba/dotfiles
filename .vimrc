@@ -83,8 +83,8 @@ function ToggleWrapNavigation()
     let s:wrapnav=0
     silent! nunmap <buffer> k 
     silent! nunmap <buffer> j
-    silent! nunmap <buffer> <Home>
-    silent! nunmap <buffer> <End>
+    silent! nunmap <buffer> 0
+    silent! nunmap <buffer> $
     silent! iunmap <buffer> <Up>
     silent! iunmap <buffer> <Down>
     silent! iunmap <buffer> <Home>
@@ -94,8 +94,8 @@ function ToggleWrapNavigation()
     let s:wrapnav=1
     noremap <buffer> <silent> k gk
     noremap <buffer> <silent> j gj
-    noremap <buffer> <silent> <Home> g<Home>
-    noremap <buffer> <silent> <End> g<End>
+    noremap <buffer> <silent> 0 g0
+    noremap <buffer> <silent> $ g$
     inoremap <buffer> <silent> <Up> <C-o>gk
     inoremap <buffer> <silent> <Down> <C-o>gj
     inoremap <buffer> <silent> <Home> <C-o>g<Home>
