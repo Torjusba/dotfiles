@@ -1,5 +1,23 @@
 " ### GENERAL ### 
 
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+" Install vim plug if not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/goyo.vim'
+
+call plug#end()
+
+
+
 set number
 set relativenumber 
 syntax enable
@@ -34,8 +52,8 @@ set clipboard=unnamedplus
 
 
 " Auto load views
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+"autocmd BufWinLeave *.* mkview
+"autocmd BufWinEnter *.* silent loadview
 
 " Pane navigation
 map <C-h> <C-w>h
@@ -43,6 +61,47 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Goyo.vim config
+autocmd FileType markdown Goyo
+
+function! s:goyo_before()
+  set linebreak
+endfunction
+
+function! s:goyo_after()
+  set nolinebreak
+  quit
+endfunction
+
+let g:goyo_callbacks = [function('s:goyo_before'), function('s:goyo_after')]
+
+let s:wrapnav = 0
+noremap <silent> <Leader>w :call ToggleWrapNavigation()<CR>
+function ToggleWrapNavigation()
+  if s:wrapnav
+    echo "Wrap navigation OFF"
+    let s:wrapnav=0
+    silent! nunmap <buffer> k 
+    silent! nunmap <buffer> j
+    silent! nunmap <buffer> <Home>
+    silent! nunmap <buffer> <End>
+    silent! iunmap <buffer> <Up>
+    silent! iunmap <buffer> <Down>
+    silent! iunmap <buffer> <Home>
+    silent! iunmap <buffer> <End>
+  else
+    echo "Wrap navigation ON"
+    let s:wrapnav=1
+    noremap <buffer> <silent> k gk
+    noremap <buffer> <silent> j gj
+    noremap <buffer> <silent> <Home> g<Home>
+    noremap <buffer> <silent> <End> g<End>
+    inoremap <buffer> <silent> <Up> <C-o>gk
+    inoremap <buffer> <silent> <Down> <C-o>gj
+    inoremap <buffer> <silent> <Home> <C-o>g<Home>
+    inoremap <buffer> <silent> <End> <C-o>g<End>
+  endif
+endfunction
 
 
 " ### VIM-SENSIBLE ### 
